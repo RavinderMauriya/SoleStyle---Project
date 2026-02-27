@@ -2,7 +2,11 @@ import React from 'react'
 
 const TrendingProduct = () => {
   return (
-    <div>TrendingProduct</div>
+    <div>
+        <div>
+            tp
+        </div>
+    </div>
   )
 }
 

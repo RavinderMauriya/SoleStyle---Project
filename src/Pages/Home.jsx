@@ -26,7 +26,7 @@ const Home = () => {
         >
 
           {/* Overlay */}
-          <div className='absolute inset-0 rounded-2xl bg-gradient-to-r from-black/60 to-transparent'></div>
+          <div className='absolute inset-0 rounded-2xl bg-linear-to-r from-black/60 to-transparent'></div>
 
           {/* Content */}
           <div className='relative z-10 text-white max-w-xl'>

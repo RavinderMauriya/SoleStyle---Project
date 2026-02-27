@@ -38,7 +38,7 @@ const FeatureCategories = () => {
         {categories.map((cat, index) => (
           <div
             key={index}
-            className="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-[3/4] cursor-pointer"
+            className="group relative overflow-hidden rounded-2xl aspect-4/5 md:aspect-3/4 cursor-pointer"
           >
             {/* Image */}
             <div
@@ -47,7 +47,7 @@ const FeatureCategories = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 transition-opacity" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-90 transition-opacity" />
 
             {/* Text */}
             <div className="absolute bottom-0 left-0 p-6 sm:p-8 w-full translate-y-2 group-hover:translate-y-0 transition-transform">
