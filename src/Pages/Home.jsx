@@ -1,55 +1,108 @@
 import React from 'react'
 import Benefits from '../Components/Benefits'
 import FeatureCategories from '../Components/FeatureCategories'
+import TrendingProduct from '../Components/TrendingProduct'
 
 const Home = () => {
   return (
     <div>
-    <div className='px-20 py-5'>
-      <section className='
-        relative
-        px-20 
-        py-16 
-        min-h-150 
-        rounded-2xl 
-        bg-[url("https://cdn.pixabay.com/photo/2019/05/10/04/45/shoes-4192767_640.jpg")] 
-        bg-cover 
-        bg-center
-        flex 
-        items-center
-      '>
 
-        {/* Dark Overlay */}
-        <div className='absolute inset-0 rounded-2xl bg-linear-to-r from-black/50 to-transparent'></div>
+      {/* Hero Section */}
+      <div className='px-4 sm:px-6 lg:px-16 py-5'>
+        <section
+          className='
+            relative
+            px-6 sm:px-10 lg:px-20
+            py-12 sm:py-16
+            min-h-[60vh]
+            lg:min-h-[80vh]
+            rounded-2xl
+            bg-[url("https://cdn.pixabay.com/photo/2019/05/10/04/45/shoes-4192767_640.jpg")]
+            bg-cover
+            bg-center
+            flex
+            items-center
+          '
+        >
 
-        {/* Content */}
-        <div className='relative z-10 text-white max-w-2xl'>
-          <p className='text-sm text-black font-semibold mb-2 px-2 py-1 bg-green-400 rounded-full inline-block '>New Season Drop</p>
+          {/* Overlay */}
+          <div className='absolute inset-0 rounded-2xl bg-gradient-to-r from-black/60 to-transparent'></div>
 
-          <h1 className='text-6xl font-extrabold leading-tight'>
-            STEP INTO <br /> FUTURE STYLE
-          </h1>
+          {/* Content */}
+          <div className='relative z-10 text-white max-w-xl'>
+            
+            <p className='
+              text-xs sm:text-sm
+              font-semibold
+              mb-4
+              px-3 py-1
+              bg-green-400
+              text-black
+              rounded-full
+              inline-block
+            '>
+              New Season Drop
+            </p>
 
-          <p className='mt-6 text-lg text-gray-200'>
-            Experience the ultimate comfort and revolutionary<br/>
-            design with our latest premium collection<br/>
-            engineered for urban movement.
-          </p>
+            <h1 className='
+              text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+              font-extrabold
+              leading-tight
+            '>
+              STEP INTO <br /> FUTURE STYLE
+            </h1>
 
-          <div className='mt-8 flex gap-4'>
-            <button className=' text-black px-8 py-3 rounded-3xl font-bold bg-green-400'>
-              Shop Now
-            </button>
+            <p className='
+              mt-4 sm:mt-6
+              text-sm sm:text-base md:text-lg
+              text-gray-200
+            '>
+              Experience the ultimate comfort and revolutionary
+              design with our latest premium collection engineered
+              for urban movement.
+            </p>
 
-            <button className='border px-6 py-3 rounded-3xl font-bold bg-white/30'>
-              Explore Collection
-            </button>
+            <div className='
+              mt-6 sm:mt-8
+              flex
+              flex-col sm:flex-row
+              gap-4
+            '>
+              <button className='
+                bg-green-400
+                text-black
+                px-6 sm:px-8
+                py-3
+                rounded-3xl
+                font-bold
+                hover:bg-green-500
+                transition
+              '>
+                Shop Now
+              </button>
+
+              <button className='
+                border
+                border-white
+                bg-white/20
+                px-6
+                py-3
+                rounded-3xl
+                font-bold
+                hover:bg-white/30
+                transition
+              '>
+                Explore Collection
+              </button>
+            </div>
+
           </div>
-        </div>
-      </section>
-    </div>
-    <Benefits/>
-    <FeatureCategories/>
+        </section>
+      </div>
+
+      <Benefits />
+      <FeatureCategories />
+      <TrendingProduct/>
     </div>
   )
 }
