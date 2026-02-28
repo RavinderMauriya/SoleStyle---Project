@@ -44,7 +44,7 @@ import React, { useState } from 'react'
 import { ShoppingCart, User, Heart, Search, Sun, Menu, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ setFormOpen }) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -83,7 +83,7 @@ const Navbar = () => {
             <Sun className='cursor-pointer hidden sm:block' />
             <Heart className='cursor-pointer hidden sm:block' />
             <ShoppingCart className='cursor-pointer' />
-            <User className='cursor-pointer hidden sm:block' />
+            <User className='cursor-pointer hidden sm:block' onClick={() => { setFormOpen(true)}} />
 
             {/* Mobile Menu Button */}
             <button
