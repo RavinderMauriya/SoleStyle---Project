@@ -6,6 +6,7 @@ import Women from './Pages/Women'
 import Men from './Pages/Men'
 import Kids from './Pages/Kids'
 import About from './Pages/About'
+import Footer from './Components/Footer'
 
 const App = () => {
     return (
@@ -19,9 +20,9 @@ const App = () => {
                         <Route path="women" element={<Women />}></Route>
                         <Route path="kids" element={<Kids />}></Route>
                     </Route>
-                    <Route path="/about" element={<About/>}></Route>
-
+                    <Route path="/about" element={<About/>}></Route>               
                 </Routes>
+                <Footer/>
             </BrowserRouter>
         </div>
     )
