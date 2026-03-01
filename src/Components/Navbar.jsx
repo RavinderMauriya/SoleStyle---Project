@@ -41,7 +41,7 @@
 // export default Navbar
 
 import React, { useState } from 'react'
-import { ShoppingCart, User, Heart, Search, Sun, Menu, X } from 'lucide-react'
+import { ShoppingCart, User, Heart, Search, Sun, Menu, X, Codesandbox } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Navbar = ({ setFormOpen }) => {
@@ -55,7 +55,7 @@ const Navbar = ({ setFormOpen }) => {
 
           {/* Logo */}
           <div className='text-2xl font-extrabold'>
-            <Link to="/">SoleStyle</Link>
+            <Link className='flex items-center gap-2' to="/"><Codesandbox className='text-green-400' /> SoleStyle</Link>
           </div>
 
           {/* Desktop Menu */}

@@ -1,6 +1,6 @@
-// menShops.js
+// kidsShops.js
 
-export const menShops = [
+export const kidsShops = [
   {
     id: 1,
     name: "Nike Air Zoom Pegasus 39",
@@ -8,7 +8,7 @@ export const menShops = [
     oldPrice: 6000,
     newPrice: 5500,
     discount: 0,
-    desc: "Men's Road Running Shoes",
+    desc: "kids's Road Running Shoes",
     longDesc:
       "Nike Air Zoom Pegasus 39 built for road runners with responsive cushioning, breathable mesh upper and durable rubber outsole.",
     image: [
@@ -17,7 +17,7 @@ export const menShops = [
     ],
     type: "runner",
     rating: 4.5,
-    category: "men",
+    category: "kids",
     tag: "Just In"
   },
   {
@@ -27,7 +27,7 @@ export const menShops = [
     oldPrice: 9000,
     newPrice: 7980,
     discount: 0,
-    desc: "Men's Shoes",
+    desc: "kids's Shoes",
     longDesc:
       "Iconic Air Jordan 1 Retro High featuring premium leather upper, high-top collar and classic basketball heritage styling.",
     image: [
@@ -35,7 +35,7 @@ export const menShops = [
     ],
     type: "basketball",
     rating: 4.8,
-    category: "men"
+    category: "kids"
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ export const menShops = [
     oldPrice: 3120,
     newPrice: 2120,
     discount: 0,
-    desc: "Men's Shoes",
+    desc: "kids's Shoes",
     longDesc:
       "Nike Air Huarache features neoprene inner sleeve, cushioned midsole and bold color-blocked design.",
     image: [
@@ -70,7 +70,7 @@ export const menShops = [
     ],
     type: "lifestyle",
     rating: 4.4,
-    category: "men"
+    category: "kids"
   },
   {
     id: 5,
@@ -79,7 +79,7 @@ export const menShops = [
     oldPrice: 1600,
     newPrice: 960,
     discount: 0,
-    desc: "Men's Shoes",
+    desc: "kids's Shoes",
     longDesc:
       "Air Max 270 designed with large heel Air unit, breathable upper and bold everyday style.",
     image: [
@@ -87,7 +87,7 @@ export const menShops = [
     ],
     type: "lifestyle",
     rating: 4.6,
-    category: "men"
+    category: "kids"
   },
   {
     id: 6,
@@ -122,6 +122,6 @@ export const menShops = [
     ],
     type: "runner",
     rating: 4.9,
-    category: "men"
+    category: "kids"
   }
 ];

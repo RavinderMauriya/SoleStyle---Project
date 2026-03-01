@@ -9,6 +9,8 @@ import About from './Pages/About'
 import Footer from './Components/Footer'
 import { DataProvider } from './Context/productDataContext'
 import FormModel from './Components/FormModel'
+import ProductDetails from './Pages/ProductDetails'
+import Page404 from './Pages/Page404'
 
 const App = () => {
     //Form Model
@@ -27,6 +29,8 @@ const App = () => {
                             <Route path="kids" element={<Kids />}></Route>
                         </Route>
                         <Route path="/about" element={<About />}></Route>
+                        <Route path="/productdetail/:id" element={<ProductDetails />}></Route>
+                        <Route path="*" element={<Page404/>}></Route>
                     </Routes>
                     <Footer />
 
