@@ -5,7 +5,7 @@ import Benefits from "../Components/Benefits";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const { products } = useContext(productDataContext);
+  const { products, addToCart } = useContext(productDataContext);
 
   const product = products?.find(
     (item) => item.id === Number(id)
@@ -132,7 +132,7 @@ const ProductDetails = () => {
  
           {/* Buttons */}
           <div className="flex gap-4 mt-10">
-            <button className="w-full py-3 bg-gray-100 hover:bg-gray-200 transition font-medium">
+            <button onClick={()=>{addToCart(product)}} className="w-full py-3 bg-gray-100 hover:bg-gray-200 transition font-medium">
               Add to Cart
             </button>
             <button className="w-full py-3 bg-green-500 text-white hover:bg-green-600 transition font-medium">

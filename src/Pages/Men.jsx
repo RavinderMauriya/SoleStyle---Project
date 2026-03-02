@@ -101,7 +101,7 @@ const Men = () => {
                   <Link key={item.id} to={`/productdetail/${item.id}`}>
                     <Card
                       id={item.id}
-                      image={item.image[0]}
+                      image={item.image}
                       name={item.name}
                       oldPrice={item.oldPrice}
                       newPrice={item.newPrice}

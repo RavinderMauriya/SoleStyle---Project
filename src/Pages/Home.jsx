@@ -3,9 +3,9 @@ import Benefits from "../Components/Benefits";
 import FeatureCategories from "../Components/FeatureCategories";
 import TrendingProduct from "../Components/TrendingProduct";
 import NewsLetter from "../Components/NewsLetter";
-import FormModel from "../Components/FormModel"
 
 const Home = () => {
+
   return (
     <div className="w-full relative">
 
@@ -57,7 +57,7 @@ const Home = () => {
 
       </div>
 
-    
+
     </div>
   );
 };

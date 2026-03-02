@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Heart } from 'lucide-react';
-
+import { productDataContext } from '../Context/productDataContext';
 const Card = ({ id, image, name, oldPrice, newPrice, desc }) => {
+
+  const {addToCart} = useContext(productDataContext);
+
   return (
     <div className="group relative flex flex-col h-full bg-gray-100/70 rounded-2xl overflow-hidden">
 
@@ -29,10 +32,13 @@ const Card = ({ id, image, name, oldPrice, newPrice, desc }) => {
           </div>
         </div>
 
-        <button className="mt-auto px-3 py-1.5 w-full bg-green-400 rounded-2xl font-bold"
+        <button className="mt-auto px-3 py-1.5 w-full bg-green-400 rounded-2xl font-bold transform-view"
         onClick={(e)=>{
           e.stopPropagation();
-          Navigate("/cart")
+          e.preventDefault();
+          addToCart(id);
+          console.log("cart btn click")
+          // Navigate("/cart")
         }}>
           Add to cart
         </button>
