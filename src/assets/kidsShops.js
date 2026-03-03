@@ -3,7 +3,7 @@
 export const kidsShops = [
   {
     id: 1,
-    name: "Nike Air Zoom Pegasus 39",
+    name: "Nike Air Pegasus 30",
     brand: "Nike",
     oldPrice: 6000,
     newPrice: 5500,
@@ -12,8 +12,7 @@ export const kidsShops = [
     longDesc:
       "Nike Air Zoom Pegasus 39 built for road runners with responsive cushioning, breathable mesh upper and durable rubber outsole.",
     image: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDp8svfdMtfiMsO-elWsyNH8vAlycB0Y2vjquvDlpxpUzssA1TsH5gtsV5dP0ndUrH1BaHDdiAu7wyyPoGj2G6Tj0QlXIQNLEnGxwkDRbMtyKq1nn4KZyJIXeXOWbur14Bo7e4Inbt4faSM-sipwTnwvLn0RbWrcVrS2aQDdU9WGs5C234JeplHxsBk5YXpKRn0G5rSooJaGdsH8biDkGfvHSkuSGa8ZKh0brZQSi5XnK_iL60J41RE59Ex6g71q8nPlVYoWulcHzYQ",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCQPmg1lNV-i_jGP3j7u42VK9BbEoC-hG3gy18g-LV0ESk6VvhlBTd8ttUQVY9rfhgkGL5mplIQ8Ryptac6QBQ4-t6G8LMx7MZS_hUdezROU3RvfMQd6OIIiWAKE3yOLy3-TgdV_oZpRXZmE1R51RkGtcObUzmVQug4MnG_lQw3wYXRcqfFWeYfsBluLDTTtXUIDlJwV-UFOB-_lXnAHBdjlC89bQdG1GhYBbMfDAqRUPROWrKIaiEtFvWbkgX_K_P2Hw_JcaWSdFXc"
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDp8svfdMtfiMsO-elWsyNH8vAlycB0Y2vjquvDlpxpUzssA1TsH5gtsV5dP0ndUrH1BaHDdiAu7wyyPoGj2G6Tj0QlXIQNLEnGxwkDRbMtyKq1nn4KZyJIXeXOWbur14Bo7e4Inbt4faSM-sipwTnwvLn0RbWrcVrS2aQDdU9WGs5C234JeplHxsBk5YXpKRn0G5rSooJaGdsH8biDkGfvHSkuSGa8ZKh0brZQSi5XnK_iL60J41RE59Ex6g71q8nPlVYoWulcHzYQ"
     ],
     type: "runner",
     rating: 4.5,
@@ -22,7 +21,7 @@ export const kidsShops = [
   },
   {
     id: 2,
-    name: "Air Jordan 1 Retro High",
+    name: "Air Jordan High",
     brand: "Jordan",
     oldPrice: 9000,
     newPrice: 7980,
@@ -39,7 +38,7 @@ export const kidsShops = [
   },
   {
     id: 3,
-    name: "Puma Future Rider Play On",
+    name: "Puma Future Rider",
     brand: "Puma",
     oldPrice: 8000,
     newPrice: 6497,
@@ -57,7 +56,7 @@ export const kidsShops = [
   },
   {
     id: 4,
-    name: "Nike Air Huarache",
+    name: "Nike Air Huarache 22",
     brand: "Nike",
     oldPrice: 3120,
     newPrice: 2120,
@@ -74,7 +73,7 @@ export const kidsShops = [
   },
   {
     id: 5,
-    name: "Nike Air Max 270",
+    name: "Nike Air 27",
     brand: "Nike",
     oldPrice: 1600,
     newPrice: 960,
@@ -91,7 +90,7 @@ export const kidsShops = [
   },
   {
     id: 6,
-    name: "Vans Old Skool",
+    name: "Vans Skool",
     brand: "Vans",
     oldPrice: 5670,
     newPrice: 4370,
@@ -109,7 +108,7 @@ export const kidsShops = [
   },
   {
     id: 7,
-    name: "Adidas Ultraboost 22",
+    name: "Adidas Ultraboost",
     brand: "Adidas",
     oldPrice: 1190,
     newPrice: 1090,

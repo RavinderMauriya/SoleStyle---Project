@@ -1,17 +1,84 @@
+// import React, { useContext, useState } from "react";
+// import { productDataContext } from "../Context/productDataContext";
+// import Card from "../Components/Card";
+// import { SlidersHorizontal } from "lucide-react";
+// import { Link } from "react-router-dom";
+
+// const Women = () => {
+//   const { products } = useContext(productDataContext);
+//   const [showFilter, setShowFilter] = useState(false);
+
+//   const womenProducts = products.filter(
+//     (item) => item.category === "women"
+//   );
+
+//   return (
+//     <div className="w-full">
+//       <main className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 py-8">
+
+//         {/* Header */}
+//         <div className="mb-10">
+//           <h1 className="text-3xl md:text-5xl font-extrabold">
+//             Women's Shoes
+//           </h1>
+//           <p className="text-gray-500 mt-2">
+//             {womenProducts.length} items
+//           </p>
+//         </div>
+
+//         <div className="flex gap-10">
+
+//           {/* Desktop Sidebar */}
+//           <aside className="hidden lg:block w-64 shrink-0">
+//             <h3 className="font-bold mb-4">Categories</h3>
+//             <ul className="space-y-2 text-sm text-gray-600">
+//               <li>Running</li>
+//               <li>Lifestyle</li>
+//               <li>Basketball</li>
+//               <li>Training</li>
+//             </ul>
+//           </aside>
+
+//           {/* Product Grid */}
+//           <div className="flex-1">
+//             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+//               {womenProducts.map((product) => (
+//                 <Link
+//                   key={product.id}
+//                   to={`/productdetail/${product.id}`}
+//                 >
+//                   <Card product={product} />
+//                 </Link>
+//               ))}
+//             </div>
+//           </div>
+
+//         </div>
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default Women;
+
+
+
+
 import React, { useContext, useState } from "react";
 import { productDataContext } from "../Context/productDataContext";
 import Card from "../Components/Card";
 import { SlidersHorizontal } from 'lucide-react';
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Women = () => {
   const { products } = useContext(productDataContext);
   const [showFilter, setShowFilter] = useState(false);
 
-  // Filter only women products
+  // Filter only men products
   const womenProducts = products.filter(
     (item) => item.category === "women"
   );
+
   return (
     <div className="w-full">
       <main className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 py-8">
@@ -20,7 +87,7 @@ const Women = () => {
         <div className="mb-10">
           <div className="text-sm text-gray-500 mb-3">
             Home / Shop /{" "}
-            <span className="text-black font-medium">Women Shoes</span>
+            <span className="text-black font-medium">Men Shoes</span>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
@@ -94,20 +161,15 @@ const Women = () => {
           {/* Product Grid */}
           <div className="flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {womenProducts &&
-                womenProducts.map((item) => (
-                  <Link key={item.id} to={`/productdetail/${item.id}`}>
-                  <Card
-                    key={item.id}
-                    id={item.id}
-                    image={item.image[0]}
-                    name={item.name}
-                    oldPrice={item.oldPrice}
-                    newPrice={item.newPrice}
-                    desc={item.desc}
-                  />
-                  </Link>
-                ))}
+
+
+              {womenProducts.map((product) => (
+                <Link key={product.id} to={`/productdetail/${product.id}`}>
+                  <Card product={product} />
+                </Link>
+              ))}
+
+              
             </div>
 
             {/* Pagination */}

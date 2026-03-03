@@ -95,21 +95,15 @@ const Men = () => {
           {/* Product Grid */}
           <div className="flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {menProducts &&
-                menProducts.map((item) => (
 
-                  <Link key={item.id} to={`/productdetail/${item.id}`}>
-                    <Card
-                      id={item.id}
-                      image={item.image}
-                      name={item.name}
-                      oldPrice={item.oldPrice}
-                      newPrice={item.newPrice}
-                      desc={item.desc}
-                    />
-                  </Link>
 
-                ))}
+              {menProducts.map((product) => (
+                <Link key={product.id} to={`/productdetail/${product.id}`}>
+                  <Card product={product} />
+                </Link>
+              ))}
+
+
             </div>
 
             {/* Pagination */}

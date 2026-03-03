@@ -1,10 +1,11 @@
+
 import React, { useContext, useState } from "react";
 import { productDataContext } from "../Context/productDataContext";
 import Card from "../Components/Card";
 import { SlidersHorizontal } from 'lucide-react';
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const Kids = () => {
+const kids = () => {
   const { products } = useContext(productDataContext);
   const [showFilter, setShowFilter] = useState(false);
 
@@ -12,6 +13,7 @@ const Kids = () => {
   const kidsProducts = products.filter(
     (item) => item.category === "kids"
   );
+
   return (
     <div className="w-full">
       <main className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 py-8">
@@ -94,20 +96,15 @@ const Kids = () => {
           {/* Product Grid */}
           <div className="flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {kidsProducts &&
-                kidsProducts.map((item) => (
-                  <Link key={item.id} to={`/productdetail/${item.id}`}>
-                  <Card
-                    key={item.id}
-                    id={item.id}
-                    image={item.image[0]}
-                    name={item.name}
-                    oldPrice={item.oldPrice}
-                    newPrice={item.newPrice}
-                    desc={item.desc}
-                  />
-                  </Link>
-                ))}
+
+
+              {kidsProducts.map((product) => (
+                <Link key={product.id} to={`/productdetail/${product.id}`}>
+                  <Card product={product} />
+                </Link>
+              ))}
+
+              
             </div>
 
             {/* Pagination */}
@@ -182,4 +179,4 @@ const Kids = () => {
   );
 };
 
-export default Kids;
+export default kids;
