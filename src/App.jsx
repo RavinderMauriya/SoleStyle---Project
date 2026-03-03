@@ -12,6 +12,7 @@ import FormModel from './Components/FormModel'
 import ProductDetails from './Pages/ProductDetails'
 import Page404 from './Pages/Page404'
 import Cart from './Pages/Cart'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
     //Form Model
@@ -20,6 +21,7 @@ const App = () => {
     return (
         <div>
             <DataProvider>
+                <Toaster/>
                 <BrowserRouter>
                     <Navbar setFormOpen={setFormOpen} />
                     <Routes>

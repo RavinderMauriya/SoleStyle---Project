@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Trash2 } from "lucide-react";
 import { productDataContext } from "../Context/productDataContext";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const { cart, updateQuantity, removeFromCart } =
@@ -49,13 +50,13 @@ const Cart = () => {
                     <h4 className="font-semibold text-lg">
                       {item.name}
                     </h4>
-                    <h4 className="text-md font-semibold">
+                    <h4 className="text-md font-bold">
                       ₹{item.newPrice}
                     </h4>
 
                   </div>
                   <p>{item.category} Shoes</p>
-                  <p>{item.selectedSize}</p>
+                  <p>Size: {item.selectedSize}</p>
 
                   <div className="flex items-center justify-between mt-6">
 
@@ -88,9 +89,10 @@ const Cart = () => {
                     </div>
 
                     <Trash2
-                      onClick={() =>
-                        removeFromCart(item.id, item.selectedSize)
-                      }
+                      onClick={() => {
+                        removeFromCart(item.id, item.selectedSize);
+                        toast.error("Item removed");
+                      }}
                       className="w-5 h-5 text-gray-500 cursor-pointer hover:text-red-500"
                     />
                   </div>
@@ -124,7 +126,7 @@ const Cart = () => {
               <span>₹{total.toFixed(2)}</span>
             </div>
 
-            <button className="mt-8 w-full bg-black text-white py-3 rounded-full font-semibold">
+            <button className="mt-8 w-full bg-black text-white py-3 rounded-full font-semibold active:scale-95">
               Proceed to Checkout →
             </button>
           </div>

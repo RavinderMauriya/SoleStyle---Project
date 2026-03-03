@@ -4,6 +4,7 @@ import { products } from "../assets/products";
 export const productDataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+  
   const [cart, setCart] = useState(() => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];

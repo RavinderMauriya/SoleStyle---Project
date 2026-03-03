@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { productDataContext } from "../Context/productDataContext";
 import Benefits from "../Components/Benefits";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -30,11 +31,11 @@ const ProductDetails = () => {
   if (!product) return <div>Loading...</div>;
 
   const handleAddToCart = () => {
-    if (!selectedSize) return alert("Select size");
+    if (!selectedSize) return toast.error("Select size");
 
     const safeQty = Number(quantity);
     if (safeQty < 1 || isNaN(safeQty)) return;
-
+    toast.success("Item added successfully")
     addToCart({
       ...product,
       quantity: safeQty,
@@ -178,12 +179,12 @@ const ProductDetails = () => {
           <div className="flex gap-4 mt-10">
             <button
               onClick={handleAddToCart}
-              className="w-full py-3 bg-gray-100 hover:bg-gray-200 font-medium"
+              className="w-full py-3 bg-gray-100 hover:bg-gray-200 font-medium active:scale-95"
             >
               Add to Cart
             </button>
 
-            <button className="w-full py-3 bg-green-500 text-white hover:bg-green-600 font-medium">
+            <button className="w-full py-3 bg-green-500 text-white hover:bg-green-600 font-medium active:scale-95">
               Buy Now
             </button>
           </div>
