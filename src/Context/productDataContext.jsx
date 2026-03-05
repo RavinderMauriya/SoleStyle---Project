@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { products } from "../assets/products";
+import {toast} from "react-hot-toast"
 
 export const productDataContext = createContext();
 
@@ -70,6 +71,7 @@ export const DataProvider = ({ children }) => {
       (i) => !(i.id === id && i.selectedSize === selectedSize)
     )
     );
+    toast.success("Item removed");
   };
 
   return (

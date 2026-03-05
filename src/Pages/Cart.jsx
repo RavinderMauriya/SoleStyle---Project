@@ -90,8 +90,7 @@ const Cart = () => {
 
                     <Trash2
                       onClick={() => {
-                        removeFromCart(item.id, item.selectedSize);
-                        toast.error("Item removed");
+                        removeFromCart(item.id, item.selectedSize)
                       }}
                       className="w-5 h-5 text-gray-500 cursor-pointer hover:text-red-500"
                     />
