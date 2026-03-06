@@ -29,36 +29,51 @@ const Men = () => {
     }));
   };
 
-  // Core logic of filter
+  // Core logic of user filter
   const filteredProducts = menProducts.filter((product) => {
+    const typeMatch =
+      filters.type.length === 0 || filters.type.includes(product.type);
 
-    // TYPE FILTER
-    if (
-      filters.type.length > 0 &&
-      !filters.type.includes(product.type)
-    ) {
-      return false;
-    }
-
-    // PRICE FILTER
-    if (filters.price.length > 0) {
-      const match = filters.price.some((range) => {
+    const priceMatch =
+      filters.price.length === 0 ||
+      filters.price.some((range) => {
         if (range === "0-2000") return product.newPrice < 2000;
-        if (range === "2000-5000")
-          return product.newPrice >= 2000 && product.newPrice < 5000;
+        if (range === "2000-5000") return product.newPrice >= 2000 && product.newPrice < 5000;
         if (range === "5000+") return product.newPrice >= 5000;
         return false;
       });
 
-      if (!match) return false;
-    }
-
-    return true;
+    return typeMatch && priceMatch;
   });
+  // const filteredProducts = menProducts.filter((product) => {
+
+  //   // TYPE FILTER
+  //   if (
+  //     filters.type.length > 0 &&
+  //     !filters.type.includes(product.type)
+  //   ) {
+  //     return false;
+  //   }
+
+  //   // PRICE FILTER
+  //   if (filters.price.length > 0) {
+  //     const match = filters.price.some((range) => {
+  //       if (range === "0-2000") return product.newPrice < 2000;
+  //       if (range === "2000-5000")
+  //         return product.newPrice >= 2000 && product.newPrice < 5000;
+  //       if (range === "5000+") return product.newPrice >= 5000;
+  //       return false;
+  //     });
+
+  //     if (!match) return false;
+  //   }
+
+  //   return true;
+  // });
+  
   // list of type category ui
   const typeList = [...new Set(menProducts.map(p => p.type))];
 
-  console.log(filteredProducts);
 
   // Add Sorting
   const sortedProducts = [...filteredProducts].sort((a, b) => {

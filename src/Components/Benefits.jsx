@@ -45,7 +45,7 @@ const Benefits = () => {
   return (
     <section className="py-12">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
         <div className="text-center space-y-3 p-4 rounded-xl hover:bg-gray-50 transition">
           <Truck className="mx-auto w-8 h-8 text-green-500" />
