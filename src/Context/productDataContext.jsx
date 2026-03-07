@@ -74,6 +74,9 @@ export const DataProvider = ({ children }) => {
     toast.success("Item removed");
   };
 
+  /* -------------------- quantity of cart -------------------- */
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <productDataContext.Provider
       value={{
@@ -82,6 +85,7 @@ export const DataProvider = ({ children }) => {
         addToCart,
         updateQuantity,
         removeFromCart,
+        totalQuantity,
       }}
     >
       {children}

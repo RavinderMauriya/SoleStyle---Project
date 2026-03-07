@@ -17,7 +17,7 @@ const Cart = () => {
 
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
-  console.log(cart)
+ 
   return (
     <div className="w-full">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 py-10">

@@ -3,9 +3,10 @@ import Benefits from "../Components/Benefits";
 import FeatureCategories from "../Components/FeatureCategories";
 import TrendingProduct from "../Components/TrendingProduct";
 import NewsLetter from "../Components/NewsLetter";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-
+const navigate = useNavigate();
   return (
     <div className="w-full relative">
 
@@ -34,11 +35,11 @@ const Home = () => {
             </p>
 
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="bg-green-400 text-black px-6 sm:px-8 py-3 rounded-3xl font-bold hover:bg-green-500 transition">
+              <button onClick={() => navigate('/shop/men')} className="bg-green-400 text-black px-6 sm:px-8 py-3 rounded-3xl font-bold hover:bg-green-500 transition">
                 Shop Now
               </button>
 
-              <button className="border border-white bg-white/20 px-6 py-3 rounded-3xl font-bold hover:bg-white/30 transition">
+              <button onClick={() => navigate('/shop/women')} className="border border-white bg-white/20 px-6 py-3 rounded-3xl font-bold hover:bg-white/30 transition">
                 Explore Collection
               </button>
             </div>

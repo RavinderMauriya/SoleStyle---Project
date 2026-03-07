@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext} from "react";
 import { ShoppingCart, User, Heart, Search, Sun, Menu, X, VectorSquare } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { productDataContext } from "../Context/productDataContext";
@@ -6,7 +6,7 @@ import { productDataContext } from "../Context/productDataContext";
 const Navbar = ({ setFormOpen }) => {
 
   const navigate = useNavigate();
-  const { products } = useContext(productDataContext);
+  const { products, totalQuantity } = useContext(productDataContext);
 
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -14,9 +14,8 @@ const Navbar = ({ setFormOpen }) => {
   const suggestions =
     query === ""
       ? []
-      : products.filter((product) =>
-          product.name.toLowerCase().includes(query.toLowerCase())
-        );
+      : products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase())
+      );
 
   return (
     <div className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
@@ -87,10 +86,16 @@ const Navbar = ({ setFormOpen }) => {
           <Sun className="cursor-pointer hidden md:block" />
           <Heart className="cursor-pointer hidden md:block" />
 
-          <ShoppingCart
-            className="cursor-pointer"
-            onClick={() => navigate("/cart")}
-          />
+          {/* for cart dot symbol */}
+          <div className="p-1 relative">
+            <ShoppingCart
+              className="cursor-pointer"
+              onClick={() => navigate("/cart")}/>
+
+            {totalQuantity > 0 && <div className="absolute bottom-6 left-5 text-xs bg-green-400 rounded-full px-1">
+              {totalQuantity}
+              </div>}
+          </div>
 
           <User
             className="cursor-pointer hidden sm:block"

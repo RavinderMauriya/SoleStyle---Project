@@ -83,7 +83,7 @@ const ProductDetails = () => {
           )}
 
           {/* Main Image */}
-          <div className="border rounded overflow-hidden w-[400px] h-[400px]">
+          <div className="border border-gray-400 rounded overflow-hidden w-[400px] h-[400px]">
             <img
               src={thumbnail}
               alt={product.name}
