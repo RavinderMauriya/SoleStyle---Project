@@ -17,7 +17,8 @@ export const menShops = [
     type: "runner",
     rating: 4.5,
     category: "men",
-    tag: "Just In"
+    tag: "Just In",
+    isTrending : true
   },
   {
     id: 2,
@@ -104,7 +105,8 @@ export const menShops = [
     type: "skate",
     rating: 4.7,
     category: "unisex",
-    tag: "Best Seller"
+    tag: "Best Seller",
+    isTrending : true
   },
   {
     id: 7,

@@ -6,9 +6,9 @@ const Card = ({ product }) => {
     <div className="group relative flex flex-col bg-white border border-gray-300 rounded-2xl overflow-hidden transition hover:shadow-xl">
 
       {/* Wishlist Icon */}
-      <button className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur rounded-full p-2 opacity-0 group-hover:opacity-100 transition">
+      {/* <button className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur rounded-full p-2 opacity-0 group-hover:opacity-100 transition">
         <Heart className="w-4 h-4 text-gray-600 hover:text-red-500 transition" />
-      </button>
+      </button> */}
 
       {/* Image */}
       <div className="aspect-square bg-gray-100 overflow-hidden">

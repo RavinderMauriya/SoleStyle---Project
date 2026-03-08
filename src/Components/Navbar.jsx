@@ -83,8 +83,8 @@ const Navbar = ({ setFormOpen }) => {
           </div>
 
           {/* Desktop Icons */}
-          <Sun className="cursor-pointer hidden md:block" />
-          <Heart className="cursor-pointer hidden md:block" />
+          {/* <Sun className="cursor-pointer hidden md:block" /> */}
+          {/* <Heart className="cursor-pointer hidden md:block" /> */}
 
           {/* for cart dot symbol */}
           <div className="p-1 relative">

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { products } from "../assets/products";
 import {toast} from "react-hot-toast"
+import { trendingProducts } from "../assets/trendingProducts";
 
 export const productDataContext = createContext();
 

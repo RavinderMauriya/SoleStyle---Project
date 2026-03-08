@@ -1,131 +1,3 @@
-// // womenShops.js
-
-// export const womenShops = [
-//   {
-//     id: 1,
-//     name: "Nike Air Zoom Pegasus 40",
-//     brand: "Nike",
-//     oldPrice: 6500,
-//     newPrice: 5999,
-//     discount: 0,
-//     desc: "Women's Road Running Shoes",
-//     longDesc:
-//       "Responsive cushioning, breathable mesh upper and durable outsole built for everyday running.",
-//     image: [
-//       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"
-//     ],
-//     type: "runner",
-//     rating: 4.6,
-//     category: "women",
-//     tag: "Just In"
-//   },
-//   {
-//     id: 2,
-//     name: "Air Jordan 1 Elevate Low",
-//     brand: "Jordan",
-//     oldPrice: 9200,
-//     newPrice: 8650,
-//     discount: 0,
-//     desc: "Women's Shoes",
-//     longDesc:
-//       "Premium leather upper with elevated platform sole and classic basketball styling.",
-//     image: [
-//       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600"
-//     ],
-//     type: "basketball",
-//     rating: 4.7,
-//     category: "women"
-//   },
-//   {
-//     id: 3,
-//     name: "Puma Cali Dream",
-//     brand: "Puma",
-//     oldPrice: 7800,
-//     newPrice: 6999,
-//     discount: 10,
-//     desc: "Women's Sneakers",
-//     longDesc:
-//       "Street-ready sneaker with stacked sole design and soft leather upper.",
-//     image: [
-//       "https://images.unsplash.com/photo-1528701800489-20be3c6dca2d?w=600"
-//     ],
-//     type: "lifestyle",
-//     rating: 4.4,
-//     category: "women",
-//     tag: "-10%"
-//   },
-//   {
-//     id: 4,
-//     name: "Adidas Ultraboost Light",
-//     brand: "Adidas",
-//     oldPrice: 12999,
-//     newPrice: 11999,
-//     discount: 0,
-//     desc: "Women's Running Shoes",
-//     longDesc:
-//       "Lightweight cushioning with adaptive knit upper and responsive sole.",
-//     image: [
-//       "https://images.unsplash.com/photo-1584735175315-9d5df23be620?w=600"
-//     ],
-//     type: "runner",
-//     rating: 4.8,
-//     category: "women"
-//   },
-//   {
-//     id: 5,
-//     name: "Nike Air Max 270",
-//     brand: "Nike",
-//     oldPrice: 10500,
-//     newPrice: 9500,
-//     discount: 0,
-//     desc: "Women's Shoes",
-//     longDesc:
-//       "Modern design with visible air cushioning and lightweight comfort.",
-//     image: [
-//       "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600"
-//     ],
-//     type: "lifestyle",
-//     rating: 4.5,
-//     category: "women"
-//   },
-//   {
-//     id: 6,
-//     name: "Vans Old Skool Platform",
-//     brand: "Vans",
-//     oldPrice: 5999,
-//     newPrice: 5299,
-//     discount: 0,
-//     desc: "Women's Skate Shoes",
-//     longDesc:
-//       "Durable suede upper with signature side stripe and elevated platform sole.",
-//     image: [
-//       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600"
-//     ],
-//     type: "skate",
-//     rating: 4.6,
-//     category: "women",
-//     tag: "Best Seller"
-//   },
-//   {
-//     id: 7,
-//     name: "Reebok Nano X3",
-//     brand: "Reebok",
-//     oldPrice: 11000,
-//     newPrice: 9999,
-//     discount: 0,
-//     desc: "Women's Training Shoes",
-//     longDesc:
-//       "Stable midsole and breathable upper designed for gym workouts.",
-//     image: [
-//       "https://images.unsplash.com/photo-1593032465171-8c2a5b2f1d2b?w=600"
-//     ],
-//     type: "training",
-//     rating: 4.5,
-//     category: "women"
-//   }
-// ];
-
-// womenShops.js
 
 export const womenShops = [
   {
@@ -176,7 +48,8 @@ export const womenShops = [
     type: "lifestyle",
     rating: 4.4,
     category: "women",
-    tag: "-10%"
+    tag: "-10%",
+    isTrending : true
   },
   {
     id: 4,
@@ -241,6 +114,7 @@ export const womenShops = [
     ],
     type: "training",
     rating: 4.5,
-    category: "women"
+    category: "women",
+    isTrending : true
   }
 ];

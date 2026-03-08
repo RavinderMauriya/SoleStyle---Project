@@ -2,7 +2,6 @@ import { menShops } from "./menShops";
 import { womenShops } from "./womenShops";
 import { kidsShops } from "./kidsShops";
 
-// Order: Men → Women → Kids
 const mergedData = [
   ...menShops,
   ...womenShops,
