@@ -3,6 +3,7 @@ import { productDataContext } from "../Context/productDataContext";
 import Card from "../Components/Card";
 import { SlidersHorizontal } from 'lucide-react';
 import { Link } from "react-router-dom";
+import {motion} from "framer-motion";
 
 const Men = () => {
   const { products } = useContext(productDataContext);
@@ -70,7 +71,7 @@ const Men = () => {
 
   //   return true;
   // });
-  
+
   // list of type category ui
   const typeList = [...new Set(menProducts.map(p => p.type))];
 
@@ -185,16 +186,22 @@ const Men = () => {
 
           {/* Product Grid */}
           <div className="flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-
-              {sortedProducts.map((product) => (
+              {/* {sortedProducts.map((product) => (
                 <Link key={product.id} to={`/productdetail/${product.id}`}>
                   <Card product={product} />
                 </Link>
+              ))} */}
+              {sortedProducts.map((product) => (
+                <motion.div key={product.id} layout>
+                  <Link to={`/productdetail/${product.id}`}>
+                    <Card product={product} />
+                  </Link>
+                </motion.div>
               ))}
 
-            </div>
+            </motion.div>
 
             {/* Pagination */}
             <div className="mt-16 flex justify-center gap-3">

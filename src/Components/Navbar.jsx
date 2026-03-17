@@ -1,7 +1,8 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { ShoppingCart, User, Heart, Search, Sun, Menu, X, VectorSquare } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { productDataContext } from "../Context/productDataContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = ({ setFormOpen }) => {
 
@@ -54,31 +55,35 @@ const Navbar = ({ setFormOpen }) => {
               onChange={(e) => setQuery(e.target.value)}
               className="bg-transparent outline-none text-sm w-full"
             />
+            <AnimatePresence>
+              {query && (
+                <motion.div className="absolute top-11 left-0 w-full bg-white border rounded-md shadow-lg z-50"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}>
 
-            {query && (
-              <div className="absolute top-11 left-0 w-full bg-white border rounded-md shadow-lg z-50">
+                  {suggestions.slice(0, 5).map((item) => (
+                    <div
+                      key={item.id}
+                      onClick={() => {
+                        navigate(`/productdetail/${item.id}`);
+                        setQuery("");
+                      }}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                    >
+                      {item.name}
+                    </div>
+                  ))}
 
-                {suggestions.slice(0, 5).map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => {
-                      navigate(`/productdetail/${item.id}`);
-                      setQuery("");
-                    }}
-                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
-                  >
-                    {item.name}
-                  </div>
-                ))}
+                  {suggestions.length === 0 && (
+                    <div className="px-4 py-2 text-gray-500 text-sm">
+                      No results
+                    </div>
+                  )}
 
-                {suggestions.length === 0 && (
-                  <div className="px-4 py-2 text-gray-500 text-sm">
-                    No results
-                  </div>
-                )}
-
-              </div>
-            )}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
           </div>
 
@@ -90,11 +95,11 @@ const Navbar = ({ setFormOpen }) => {
           <div className="p-1 relative">
             <ShoppingCart
               className="cursor-pointer"
-              onClick={() => navigate("/cart")}/>
+              onClick={() => navigate("/cart")} />
 
             {totalQuantity > 0 && <div className="absolute bottom-6 left-5 text-xs bg-green-400 rounded-full px-1">
               {totalQuantity}
-              </div>}
+            </div>}
           </div>
 
           <User
@@ -115,62 +120,66 @@ const Navbar = ({ setFormOpen }) => {
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="lg:hidden px-6 pb-4 border-t bg-white">
+      <AnimatePresence>
+        {open && (
+          <motion.div className="lg:hidden px-6 pb-4 border-t bg-white"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}>
 
-          <ul className="flex flex-col gap-4 font-semibold text-gray-800 pt-4">
+            <ul className="flex flex-col gap-4 font-semibold text-gray-800 pt-4">
 
-            <li>
-              <Link to="/" onClick={() => setOpen(false)}>
-                Home
-              </Link>
-            </li>
+              <li>
+                <Link to="/" onClick={() => setOpen(false)}>
+                  Home
+                </Link>
+              </li>
 
-            <li>
-              <Link to="/shop/men" onClick={() => setOpen(false)}>
-                Men
-              </Link>
-            </li>
+              <li>
+                <Link to="/shop/men" onClick={() => setOpen(false)}>
+                  Men
+                </Link>
+              </li>
 
-            <li>
-              <Link to="/shop/women" onClick={() => setOpen(false)}>
-                Women
-              </Link>
-            </li>
+              <li>
+                <Link to="/shop/women" onClick={() => setOpen(false)}>
+                  Women
+                </Link>
+              </li>
 
-            <li>
-              <Link to="/shop/kids" onClick={() => setOpen(false)}>
-                Kids
-              </Link>
-            </li>
+              <li>
+                <Link to="/shop/kids" onClick={() => setOpen(false)}>
+                  Kids
+                </Link>
+              </li>
 
-            <li>
-              <Link to="/about" onClick={() => setOpen(false)}>
-                About
-              </Link>
-            </li>
+              <li>
+                <Link to="/about" onClick={() => setOpen(false)}>
+                  About
+                </Link>
+              </li>
 
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setFormOpen(true);
-                setOpen(false);
-              }}
-            >
-              Login
-            </li>
+              <li
+                className="cursor-pointer"
+                onClick={() => {
+                  setFormOpen(true);
+                  setOpen(false);
+                }}
+              >
+                Login
+              </li>
 
-            <li>
-              <Link to="/wishlist" onClick={() => setOpen(false)}>
-                Wishlist
-              </Link>
-            </li>
+              <li>
+                <Link to="/wishlist" onClick={() => setOpen(false)}>
+                  Wishlist
+                </Link>
+              </li>
 
-          </ul>
+            </ul>
 
-        </div>
-      )}
-
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

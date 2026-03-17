@@ -3,6 +3,7 @@ import Card from "./Card";
 import { useContext } from "react";
 import { productDataContext } from "../Context/productDataContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const TrendingProduct = () => {
   const { products } = useContext(productDataContext);
@@ -16,15 +17,22 @@ const TrendingProduct = () => {
           Trending Products
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          
-            {trendingProducts.map((i) => (
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+          {/* {trendingProducts.map((i) => (
               <Link key={i.id} to={`/productdetail/${i.id}`}>
               <Card product={i}/>
                </Link>
-            ))}
-         
-        </div>
+            ))} */}
+          {trendingProducts.map((i) => (
+            <motion.div key={i.id} layout>
+              <Link to={`/productdetail/${i.id}`}>
+                <Card product={i} />
+              </Link>
+            </motion.div>
+          ))}
+
+        </motion.div>
       </div>
     </section>
   );
