@@ -13,6 +13,7 @@ import ProductDetails from './Pages/ProductDetails'
 import Page404 from './Pages/Page404'
 import Cart from './Pages/Cart'
 import { Toaster } from 'react-hot-toast'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const App = () => {
     //Form Model
@@ -21,7 +22,7 @@ const App = () => {
     return (
         <div>
             <DataProvider>
-                <Toaster/>
+                <Toaster />
                 <BrowserRouter>
                     <Navbar setFormOpen={setFormOpen} />
                     <Routes>
@@ -33,12 +34,18 @@ const App = () => {
                         </Route>
                         <Route path="/about" element={<About />}></Route>
                         <Route path="/productdetail/:id" element={<ProductDetails />}></Route>
-                        <Route path='/cart' element={<Cart/>}></Route>
-                        <Route path="*" element={<Page404/>}></Route>
+                        <Route path='/cart' element={<Cart />}></Route>
+                        <Route path="*" element={<Page404 />}></Route>
                     </Routes>
                     <Footer />
 
-                    {formOpen && <FormModel onClose={() => setFormOpen(false)} />}
+                    <AnimatePresence>
+                        {formOpen && (
+                            <motion.div>
+                                <FormModel onClose={() => setFormOpen(false)} />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
 
                 </BrowserRouter>
             </DataProvider>

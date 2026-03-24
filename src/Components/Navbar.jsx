@@ -169,11 +169,11 @@ const Navbar = ({ setFormOpen }) => {
                 Login
               </li>
 
-              <li>
+              {/* <li>
                 <Link to="/wishlist" onClick={() => setOpen(false)}>
                   Wishlist
                 </Link>
-              </li>
+              </li> */}
 
             </ul>
 

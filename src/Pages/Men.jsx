@@ -3,7 +3,7 @@ import { productDataContext } from "../Context/productDataContext";
 import Card from "../Components/Card";
 import { SlidersHorizontal } from 'lucide-react';
 import { Link } from "react-router-dom";
-import {motion} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Men = () => {
   const { products } = useContext(productDataContext);
@@ -220,69 +220,76 @@ const Men = () => {
       </main >
 
       {/* Mobile Filter Drawer */}
-      {
-        showFilter && (
-          <div className="fixed inset-0 bg-black/40 z-50 flex">
-            <div className="bg-white w-72 p-6 overflow-y-auto">
-              <button
-                onClick={() => setShowFilter(false)}
-                className="mb-6 text-lg font-bold"
-              >
-                X
-              </button>
+      <AnimatePresence>
+        {
+          showFilter && (
+            <motion.div
+              initial={{width: 0, opacity: 0 }}
+              animate={{ width: "auto", opacity: 1 }}
+              exit={{ width: 0, opacity: 0 }}
+              className="fixed inset-0 bg-black/40 z-50 flex">
+              <div className="bg-white w-72 p-6 overflow-y-auto">
+                <button
+                  onClick={() => setShowFilter(false)}
+                  className="mb-6 text-lg font-bold"
+                >
+                  X
+                </button>
 
-              {/* Same Filter Content */}
-              <div className="space-y-8">
+                {/* Same Filter Content */}
+                <div className="space-y-8">
 
-                <div>
-                  <h3 className="font-bold mb-4">Categories (Type)</h3>
-                  <ul className="space-y-2 text-sm text-gray-900">
-                    {typeList.map((t) => (
-                      <li key={t}>
-                        <label className="flex gap-2 cursor-pointer hover:text-green-500">
-                          <input
-                            type="checkbox"
-                            checked={filters.type.includes(t)}
-                            onChange={() => toggleFilter("type", t)}
-                          />
-                          {t}
-                        </label>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h3 className="font-bold mb-4">Categories (Type)</h3>
+                    <ul className="space-y-2 text-sm text-gray-900">
+                      {typeList.map((t) => (
+                        <li key={t}>
+                          <label className="flex gap-2 cursor-pointer hover:text-green-500">
+                            <input
+                              type="checkbox"
+                              checked={filters.type.includes(t)}
+                              onChange={() => toggleFilter("type", t)}
+                            />
+                            {t}
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
 
-                </div>
-
-                <div>
-                  <h3 className="font-bold mb-4">Shop by Price</h3>
-                  <div className="space-y-2 text-sm">
-                    <label className="flex gap-2">
-                      <input type="checkbox" />
-                      ₹0 - ₹2000
-                    </label>
-                    <label className="flex gap-2">
-                      <input type="checkbox" />
-                      ₹2000 - ₹5000
-                    </label>
-                    <label className="flex gap-2">
-                      <input type="checkbox" />
-                      Above ₹5000
-                    </label>
                   </div>
+
+                  <div>
+                    <h3 className="font-bold mb-4">Shop by Price</h3>
+                    <div className="space-y-2 text-sm">
+                      <label className="flex gap-2">
+                        <input type="checkbox" onChange={() => toggleFilter("price", "0-2000")} />
+                        ₹0 - ₹2000
+                      </label>
+                      <label className="flex gap-2">
+                        <input type="checkbox" onChange={() => toggleFilter("price", "2000-5000")} />
+                        ₹2000 - ₹5000
+                      </label>
+                      <label className="flex gap-2">
+                        <input type="checkbox" onChange={() => toggleFilter("price", "5000+")} />
+                        Above ₹5000
+                      </label>
+                    </div>
+                  </div>
+
                 </div>
-
               </div>
-            </div>
 
-            {/* Click Outside Area */}
-            <div
-              className="flex-1"
-              onClick={() => setShowFilter(false)}
-            />
-          </div>
-        )
-      }
+              {/* Click Outside Area */}
+              <div
+                className="flex-1"
+                onClick={() => setShowFilter(false)}
+              />
+            </motion.div>
+          )
+        }
+      </AnimatePresence>
     </div >
+
   );
 };
 

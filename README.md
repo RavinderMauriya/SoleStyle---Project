@@ -5,17 +5,17 @@ SoleStyle is a modern fashion e-commerce web application built to demonstrate a 
 This project serves as a practical implementation of frontend development concepts such as component-based architecture, routing, state management, and responsive layout design.
 
 ---
+## Live Demo
+[![Screenshot](./public/home.png)](https://solestyleproject.netlify.app)
+---
 
 ## Table of Contents
 
 - Overview
 - Features
 - Tech Stack
-- Installation
-- Usage
 - Project Structure
-- Screenshots
-- Future Improvements
+
 
 ---
 
@@ -72,3 +72,17 @@ Development Tools:
 - VS Code
 
 ---
+
+## Project Structure
+SoleStyle/
+│── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Page-level components
+│   ├── context/        # Global state management
+│   ├── assets/         # Images and static files
+│   ├── App.jsx         # Main application
+│   └── main.jsx        # Entry point
+│
+│── public/
+│── package.json
+│── vite.config.js
